@@ -1,94 +1,59 @@
-# CO₂ Emissions Prediction using Multiple Linear Regression
+# Machine Learning Projects Repository
 
-This project demonstrates how to build and visualize a multiple linear regression model to predict vehicle CO₂ emissions based on engine size and fuel consumption data.
+## Overview
+This repository contains four machine learning projects implemented in Python, each focusing on different datasets and algorithms. The projects demonstrate techniques such as linear regression, support vector machines, gradient boosting, and random forest classification. Each project is organized in its own folder, containing the Python script and a dedicated README with detailed instructions.
 
-## Dataset
+## Repository Structure
+```
+├── co2_emissions/
+│   ├── CO2.py                    # CO2 emissions prediction script
+│   ├── README.md                 # README for CO2 emissions project
+├── digit_classifier/
+│   ├── SVM_classifier.py         # Digit classifier script
+│   ├── README.md                 # README for digit classifier project
+├── house_prediction/
+│   ├── house_predict.py          # House price prediction script
+│   ├── README.md                 # README for house price prediction project
+├── breast_cancer/
+│   ├── breast_cancer.py          # Breast cancer classification script
+│   ├── README.md                 # README for breast cancer project
+├── README.md                     # Central README (this file)
+```
 
-The dataset is publicly available and hosted by IBM:
+## Projects
+1. **CO2 Emissions Prediction**  
+   Uses simple linear regression to predict CO2 emissions based on input features.  
+   [View Details](co2_emissions/README.md)
 
-[FuelConsumptionCo2.csv](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork/labs/Module%202/data/FuelConsumptionCo2.csv)
+2. **Digit Classifier**  
+   Implements a Support Vector Machine (SVM) classifier to recognize handwritten digits.  
+   [View Details](digit_classifier/README.md)
 
-It contains information on fuel consumption, engine size, and corresponding CO₂ emissions for a variety of car models.
+3. **House Price Prediction**  
+   Applies XGBoost to predict house prices using various property features.  
+   [View Details](house_prediction/README.md)
 
-## Features Used
-
-**Input Features:**
-- `ENGINESIZE`: Size of the vehicle’s engine (liters)
-- `FUELCONSUMPTION_COMB_MPG`: Fuel consumption in miles per gallon (combined cycle)
-
-**Target Variable:**
-- `CO2EMISSIONS`: Carbon dioxide emissions in grams per kilometer
-
-## Workflow
-
-### 1. Data Preparation
-- Load data using `pandas`
-- Drop non-numeric and irrelevant columns such as:
-  - `MAKE`, `MODEL`, `FUELTYPE`, etc.
-- Remove collinear features based on correlation analysis
-- Normalize the data using `StandardScaler` for consistent feature scaling
-
-### 2. Model Training
-- Split the dataset into training and testing sets (80/20 split)
-- Train a multiple linear regression model using two independent variables:
-  - `ENGINESIZE`
-  - `FUELCONSUMPTION_COMB_MPG`
-- Output model coefficients and intercept
-- Convert standardized coefficients back to original scale for interpretation
-
-### 3. Visualization
-- Create a 3D scatter plot showing the regression plane and data points
-- Generate 2D regression lines for:
-  - `CO2EMISSIONS` vs `ENGINESIZE`
-  - `CO2EMISSIONS` vs `FUELCONSUMPTION_COMB_MPG`
-- Compare model fit using both training and test data
-
-### 4. Additional Models
-- Retrain and evaluate two simple linear regression models using:
-  - Only `ENGINESIZE`
-  - Only `FUELCONSUMPTION_COMB_MPG`
-- Visualize each model with line-of-best-fit and scatterplots
-
-## Key Outputs
-
-- Coefficients (standardized and original)
-- 3D regression surface
-- 2D regression lines
-- Evaluation of the model's performance via visual inspection of predictions
+4. **Breast Cancer Classification**  
+   Utilizes a Random Forest Classifier to predict breast cancer diagnosis (malignant or benign) using the Breast Cancer Wisconsin dataset.  
+   [View Details](breast_cancer/README.md)
 
 ## Requirements
-
-Install the required Python libraries:
-
+To run the projects, install the required Python libraries:
 ```bash
-pip install numpy pandas matplotlib scikit-learn
+pip install numpy pandas matplotlib scikit-learn seaborn xgboost
 ```
+Check each project's README for specific dependencies if applicable.
 
-## How to Run
-
-This script can be run in any Python environment. If using a Jupyter Notebook, uncomment the line:
-
-```python
-%matplotlib inline
+## Usage
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd <repository-directory>
 ```
+2. Navigate to a project folder (e.g., `cd co2_emissions`) and refer to its `README.md` for specific instructions on running the script.
 
-to enable inline plotting.
-
-## Notes
-
-- Standardization is essential for comparing features on different scales
-- Coefficients are translated back to original units for clearer interpretation
-- Visualization provides intuitive understanding of model performance
-
-## File Structure
-
-```
-.
-├── CO2.py (or .ipynb)
-├── README.md
-```
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for improvements, bug fixes, or new features.
 
 ## License
-
-This project is for educational purposes and is released under the MIT License.
-
+This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
